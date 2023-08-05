@@ -19,4 +19,6 @@ def todo_list_view(request):
         else:
             return JsonResponse({'Error': "title is required"}, status=400)
     if request.method == 'GET':
-        return JsonResponse({'msg': "Hello"}, status=200)
+        tasks = Task.objects.all()
+        tasksList = [{'id': task.id, 'title': task.title} for task in tasks]
+        return JsonResponse(tasksList, safe=False, status=200)

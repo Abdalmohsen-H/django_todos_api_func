@@ -20,5 +20,5 @@ from todos_func_app.views import todo_list_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('tasks/', todo_list_view, name='todo_list_view')
+    path('todos/', todo_list_view, name='todo_list_view')
 ]
